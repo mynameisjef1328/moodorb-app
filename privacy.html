@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mood Orb — Privacy Policy</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Mono:wght@300;400&display=swap');
+
+    :root {
+      --black: #000000;
+      --deep: #030508;
+      --blue-core: #5ba4ff;
+      --text: rgba(255,255,255,0.82);
+      --muted: rgba(255,255,255,0.38);
+      --faint: rgba(255,255,255,0.10);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--text);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: -20vh;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 700px;
+      height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle,
+        rgba(60, 100, 220, 0.08) 0%,
+        rgba(30, 60, 160, 0.04) 45%,
+        transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 32px;
+      position: relative;
+      z-index: 1;
+    }
+
+    header {
+      padding: 80px 0 60px;
+      text-align: center;
+    }
+
+    .orb-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 38% 35%,
+        rgba(200,225,255,0.95) 0%,
+        rgba(100,160,255,0.85) 22%,
+        rgba(60,100,220,0.9) 50%,
+        rgba(30,60,180,0.95) 75%,
+        rgba(10,20,100,1) 100%);
+      box-shadow:
+        0 0 28px rgba(80,130,255,0.45),
+        0 0 60px rgba(60,100,220,0.18);
+      margin: 0 auto 28px;
+      animation: pulse 4s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(0.96); box-shadow: 0 0 28px rgba(80,130,255,0.45), 0 0 60px rgba(60,100,220,0.18); }
+      50%       { transform: scale(1.04); box-shadow: 0 0 40px rgba(80,130,255,0.65), 0 0 80px rgba(60,100,220,0.28); }
+    }
+
+    h1 {
+      font-size: 42px;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .tagline {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      font-weight: 300;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .divider {
+      width: 1px;
+      height: 48px;
+      background: linear-gradient(to bottom, transparent, var(--faint), transparent);
+      margin: 48px auto;
+    }
+
+    section {
+      margin-bottom: 64px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.7s ease forwards;
+    }
+
+    section:nth-child(1) { animation-delay: 0.1s; }
+    section:nth-child(2) { animation-delay: 0.2s; }
+    section:nth-child(3) { animation-delay: 0.3s; }
+    section:nth-child(4) { animation-delay: 0.4s; }
+    section:nth-child(5) { animation-delay: 0.5s; }
+    section:nth-child(6) { animation-delay: 0.6s; }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--blue-core);
+      margin-bottom: 20px;
+      opacity: 0.7;
+    }
+
+    h2 {
+      font-size: 28px;
+      font-weight: 300;
+      letter-spacing: 0.04em;
+      color: #fff;
+      margin-bottom: 16px;
+      font-style: italic;
+    }
+
+    p {
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    /* Big statement */
+    .big-statement {
+      border-left: 1px solid var(--blue-core);
+      padding: 20px 28px;
+      margin: 32px 0;
+      opacity: 0.85;
+    }
+
+    .big-statement p {
+      font-size: 22px;
+      font-weight: 300;
+      font-style: italic;
+      color: #fff;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Data table */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+    }
+
+    .data-table tr {
+      border-top: 1px solid var(--faint);
+    }
+
+    .data-table tr:last-child {
+      border-bottom: 1px solid var(--faint);
+    }
+
+    .data-table td {
+      padding: 16px 0;
+      font-size: 17px;
+      font-weight: 300;
+      line-height: 1.6;
+      vertical-align: top;
+    }
+
+    .data-table td:first-child {
+      color: #fff;
+      font-weight: 400;
+      width: 42%;
+      padding-right: 24px;
+    }
+
+    .data-table td:last-child {
+      color: var(--muted);
+    }
+
+    /* Pills */
+    .privacy-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .pill {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: 1px solid var(--faint);
+      border-radius: 100px;
+      padding: 6px 14px;
+    }
+
+    /* Contact */
+    .contact-box {
+      background: var(--faint);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      padding: 32px 36px;
+      text-align: center;
+    }
+
+    .contact-box p {
+      color: var(--muted);
+      font-size: 17px;
+      margin-bottom: 20px;
+    }
+
+    .contact-link {
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      color: var(--blue-core);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      border-bottom: 1px solid rgba(91, 164, 255, 0.3);
+      padding-bottom: 2px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .contact-link:hover {
+      color: #fff;
+      border-color: rgba(255,255,255,0.4);
+    }
+
+    /* Back link */
+    .back-link {
+      display: inline-block;
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      margin-bottom: 48px;
+      border-bottom: 1px solid var(--faint);
+      padding-bottom: 2px;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover { color: var(--text); }
+
+    footer {
+      text-align: center;
+      padding: 48px 0 64px;
+      border-top: 1px solid var(--faint);
+      margin-top: 32px;
+    }
+
+    footer p {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      opacity: 0.5;
+      margin: 0;
+    }
+
+    .effective-date {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      opacity: 0.5;
+      margin-top: 8px;
+      text-align: center;
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 32px; }
+      h2 { font-size: 24px; }
+      .container { padding: 0 20px; }
+      header { padding: 56px 0 40px; }
+      .data-table td:first-child { width: 50%; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <header>
+    <div class="orb-icon"></div>
+    <h1>Mood Orb</h1>
+    <p class="tagline">Privacy Policy</p>
+  </header>
+
+  <div class="effective-date">Effective March 14, 2026</div>
+
+  <div class="divider"></div>
+
+  <a class="back-link" href="index.html">← Support</a>
+
+  <section>
+    <p class="section-label">The Short Version</p>
+    <h2>We collect nothing.</h2>
+    <div class="big-statement">
+      <p>Mood Orb does not collect, store, transmit, or share any personal data — ever. Your breath is entirely your own.</p>
+    </div>
+    <p>This is not a simplification. There is no fine print. Mood Orb was built from the ground up with a single privacy principle: the app exists entirely on your device and nowhere else.</p>
+  </section>
+
+  <section>
+    <p class="section-label">Data Collection</p>
+    <h2>What we collect</h2>
+    <table class="data-table">
+      <tr>
+        <td>Personal information</td>
+        <td>None collected</td>
+      </tr>
+      <tr>
+        <td>Usage analytics</td>
+        <td>None collected</td>
+      </tr>
+      <tr>
+        <td>Location data</td>
+        <td>None collected</td>
+      </tr>
+      <tr>
+        <td>Device identifiers</td>
+        <td>None collected</td>
+      </tr>
+      <tr>
+        <td>Health or biometric data</td>
+        <td>None collected</td>
+      </tr>
+      <tr>
+        <td>Session duration or frequency</td>
+        <td>None collected</td>
+      </tr>
+      <tr>
+        <td>Crash reports</td>
+        <td>None collected</td>
+      </tr>
+    </table>
+    <div class="privacy-pills">
+      <span class="pill">No data collected</span>
+      <span class="pill">No analytics</span>
+      <span class="pill">No tracking</span>
+      <span class="pill">No third-party SDKs</span>
+      <span class="pill">Works fully offline</span>
+    </div>
+  </section>
+
+  <section>
+    <p class="section-label">Third Parties</p>
+    <h2>Who we share data with</h2>
+    <p>No one. Mood Orb contains zero third-party SDKs, analytics libraries, advertising frameworks, or data brokers of any kind. There is nothing to share because nothing is collected.</p>
+    <p>The app makes no network requests of any kind during normal operation.</p>
+  </section>
+
+  <section>
+    <p class="section-label">Your Device</p>
+    <h2>What stays on your iPhone</h2>
+    <p>Mood Orb stores one single piece of information locally on your device: whether the intro animation has been shown. This is a simple true/false value stored in your device's local preferences (UserDefaults). It never leaves your device and is deleted when you uninstall the app.</p>
+    <p>That is the complete and total extent of Mood Orb's data footprint.</p>
+  </section>
+
+  <section>
+    <p class="section-label">Children</p>
+    <h2>Users of all ages</h2>
+    <p>Mood Orb is rated 4+ and is safe for users of all ages. Because we collect no data whatsoever, there are no special considerations required for younger users. The app is equally private for everyone.</p>
+  </section>
+
+  <section>
+    <p class="section-label">Changes</p>
+    <h2>Updates to this policy</h2>
+    <p>If this privacy policy ever changes, the updated version will be posted here with a new effective date. Given the nature of Mood Orb, meaningful changes to this policy are unlikely — there is very little to say about data we do not collect.</p>
+  </section>
+
+  <section>
+    <p class="section-label">Contact</p>
+    <h2>Questions?</h2>
+    <div class="contact-box">
+      <p>If you have any questions about this privacy policy or Mood Orb's approach to privacy, we're happy to hear from you.</p>
+      <a class="contact-link" href="mailto:support@moodorb.app">support@moodorb.app</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Mood Orb &nbsp;·&nbsp; All rights reserved</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
